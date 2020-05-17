@@ -1044,7 +1044,7 @@ Request.prototype.onRequestResponse = function (response) {
       responseContent = response
     }
 
-    if (self.encoding) {
+    if (self.encoding && Buffer.isEncoding(self.encoding)) {
       if (self.dests.length !== 0) {
         console.error('Ignoring encoding parameter as this stream is being piped to another stream which makes the encoding option invalid.')
       } else {
@@ -1126,7 +1126,7 @@ Request.prototype.readResponseBody = function (response) {
     if (bufferLength) {
       debug('has body', self.uri.href, bufferLength)
       response.body = Buffer.concat(buffers, bufferLength)
-      if (self.encoding !== null) {
+      if (self.encoding !== null && Buffer.isEncoding(self.encoding)) {
         response.body = response.body.toString(self.encoding)
       }
       // `buffer` is defined in the parent scope and used in a closure it exists for the life of the Request.
