@@ -455,10 +455,11 @@ tape('http to https redirect', function (t) {
   })
 })
 
-tape('http to https redirect should fail without the explicit "allowInsecureRedirect" option', function (t) {
+tape('http to https redirect should fail when "allowInsecureRedirect" is false', function (t) {
   hits = {}
   request.get({
     uri: require('url').parse(s.url + '/ssl'),
+    allowInsecureRedirect: false,
     rejectUnauthorized: false
   }, function (err, res, body) {
     t.notEqual(err, null)
