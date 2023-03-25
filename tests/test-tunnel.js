@@ -356,6 +356,7 @@ function addTests () {
     'https->http over http, tunnel=true',
     {
       url: ss.url + '/redirect/http',
+      allowInsecureRedirect: true,
       proxy: s.url,
       tunnel: true
     },
@@ -372,6 +373,7 @@ function addTests () {
     'https->http over http, tunnel=false',
     {
       url: ss.url + '/redirect/http',
+      allowInsecureRedirect: true,
       proxy: s.url,
       tunnel: false
     },
@@ -388,6 +390,7 @@ function addTests () {
     'https->http over http, tunnel=default',
     {
       url: ss.url + '/redirect/http',
+      allowInsecureRedirect: true,
       proxy: s.url
     },
     [

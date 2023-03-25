@@ -18,6 +18,7 @@ request = request.defaults({
     user: 'test',
     pass: 'testing'
   },
+  allowInsecureRedirect: true,
   rejectUnauthorized: false
 })
 
