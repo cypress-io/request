@@ -68,6 +68,8 @@ There are a few basic ground-rules for contributors:
 
 Declaring formal releases remains the prerogative of the project maintainer.
 
+This package uses semantic versioning and [semantic-release](https://github.com/semantic-release/semantic-release) to auto-publish releases to npm upon merge into the master branch.
+
 ## Changes to this arrangement
 
 This is an experiment and feedback is welcome! This document may also be
