@@ -20,7 +20,7 @@ jobs:
 
   release:
     docker:
-      - image: cimg/node:18.20.4
+      - image: cimg/node:22.7.0
     steps:
       - checkout
       - restore_cache:
