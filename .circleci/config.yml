@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/node:20
+      - image: cimg/node:20.17.0
     working_directory: ~/repo
     steps:
       - checkout
