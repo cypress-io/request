@@ -37,7 +37,7 @@ workflows:
       - test
       - release:
           context:
-            - test-runner:npm-release
+            - [test-runner:npm-release, org-npm-credentials]
           requires:
             - test
           filters:
