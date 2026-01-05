@@ -221,7 +221,6 @@ form.append('custom_file', fs.createReadStream(__dirname + '/unicycle.jpg'), {fi
 ```
 See the [form-data README](https://github.com/form-data/form-data) for more information & examples.
 
-
 #### multipart/related
 
 Some variations in different HTTP implementations require a newline/CRLF before, after, or both before and after the boundary of a `multipart/related` request (using the multipart option). This has been observed in the .NET WebAPI version 4.0. You can turn on a boundary preambleCRLF or postamble by passing them as `true` to your request options.
