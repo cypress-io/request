@@ -37,8 +37,7 @@ workflows:
       - test
       - release:
           context: [test-runner:npm-release, org-npm-credentials]
-          requires:
-            - test
+          type: approval
           filters:
             branches:
               only:
