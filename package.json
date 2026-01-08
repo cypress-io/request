@@ -62,7 +62,7 @@
     "coveralls": "^3.0.2",
     "function-bind": "^1.0.2",
     "karma": "^3.0.0",
-    "karma-browserify": "^5.0.1",
+    "karma-browserify": "^8.0.0",
     "karma-cli": "^2.0.0",
     "karma-coverage": "^2.0.3",
     "karma-phantomjs-launcher": "^1.0.0",
