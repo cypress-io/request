@@ -29,7 +29,7 @@ function runTest (t, options) {
       }
     }
 
-    t.ok(/multipart\/form-data; boundary=--------------------------\d+/
+    t.ok(/multipart\/form-data; boundary=--------------------------[0-9a-f]+/
       .test(req.headers['content-type']))
 
     // temp workaround
