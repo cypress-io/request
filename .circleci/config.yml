@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   test:
     docker:
@@ -20,7 +20,7 @@ jobs:
 
   release:
     docker:
-      - image: cimg/node:22.7.0
+      - image: cimg/node:22.21.0
     steps:
       - checkout
       - restore_cache:
@@ -28,10 +28,13 @@ jobs:
             - v1-dependencies-npm-{{ checksum "package.json" }}
             - v1-dependencies-npm
       - run: npm install
-      - run: npx semantic-release
+      # npm trusted publishing: semantic-release exchanges this OIDC token for a
+      # short-lived publish token, so it has to be exported in the same step
+      - run: |
+          export NPM_ID_TOKEN=$(circleci run oidc get --claims '{"aud": "npm:registry.npmjs.org"}')
+          npx semantic-release@25.0.9
 
 workflows:
-  version: 2
   test_and_release:
     jobs:
       - test
